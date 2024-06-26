@@ -1,4 +1,3 @@
-// app/components/PokemonList.js
 "use client";
 
 import { useState, useEffect, useRef } from "react";
@@ -9,32 +8,6 @@ const PokemonList = ({ initialPokemons, initialOffset }: any) => {
   const [offset, setOffset] = useState(initialOffset);
   const [loading, setLoading] = useState(false);
   const [hasMore, setHasMore] = useState(true);
-
-  const bottomRef = useRef(null);
-
-  // Function to check if scrolled to bottom
-  const isScrolledToBottom = () => {
-    if (!bottomRef.current) return false;
-
-    const { scrollTop, clientHeight, scrollHeight } = bottomRef.current;
-
-    return scrollTop + clientHeight >= scrollHeight;
-  };
-
-  // Effect to log when scrolled to bottom
-  useEffect(() => {
-    const handleScroll = () => {
-      if (isScrolledToBottom()) {
-        console.log("Scrolled to bottom!");
-        // Perform your actions when scrolled to bottom
-      }
-    };
-
-    window.addEventListener("scroll", handleScroll);
-    return () => {
-      window.removeEventListener("scroll", handleScroll);
-    };
-  }, []);
 
   const fetchMorePokemons = async () => {
     if (loading || !hasMore) return;
@@ -75,9 +48,7 @@ const PokemonList = ({ initialPokemons, initialOffset }: any) => {
   }, [hasMore]);
 
   return (
-    <div
-      ref={bottomRef}
-      className="max-h-600vh grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 p-4">
+    <div className="max-h-600vh grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 p-4">
       {pokemons.map((pokemon: any) => (
         <div
           key={pokemon.id}

@@ -1,5 +1,3 @@
-// app/page.js
-
 import PokemonList from "@/components/PokemonList";
 
 export const revalidate = 0; // To ensure the data is fetched on every request
@@ -21,6 +19,7 @@ async function fetchInitialPokemons() {
 }
 
 export default async function Home() {
+  // this function is rendered serverside.
   const { initialPokemons, initialOffset } = await fetchInitialPokemons();
 
   return (
