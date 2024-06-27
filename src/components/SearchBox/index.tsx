@@ -1,4 +1,5 @@
 "use client";
+
 import { usePokemon } from "@/contexts/PokemonContext";
 import usePokemonTypes from "@/hooks/usePokemonTypes";
 import Image from "next/image";
@@ -7,10 +8,16 @@ import React, { FC, ChangeEvent, FormEvent, useState } from "react";
 interface SearchFormProps {}
 
 const SearchForm: FC<SearchFormProps> = () => {
-  const { types } = usePokemon();
+  const { types, setFilter } = usePokemon();
 
-  const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
+  const handleSubmit = (e: any) => {
     e.preventDefault();
+    const type = e.target.type.value;
+    const searchTerm = e.target.searchTerm.value;
+    setFilter({
+      type,
+      searchTerm,
+    });
   };
 
   return (
@@ -18,14 +25,16 @@ const SearchForm: FC<SearchFormProps> = () => {
       onSubmit={handleSubmit}
       className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-6"
     >
-      <select className="  h-16 rounded-[8px] p-5 w-48">
-        <option value="">Select</option>
-        {types.map((type: any) => (
-          <option key={type.name} value={type.name}>
-            {type.name}
-          </option>
-        ))}
-      </select>
+      <div className="bg-white  h-16 rounded-[8px] p-5 w-48">
+        <select name="type" className="w-full">
+          <option value="">Select Type</option>
+          {types.map((type: any) => (
+            <option key={type.name} value={type.name}>
+              {type.name}
+            </option>
+          ))}
+        </select>
+      </div>
       <div className="flex items-center gap-2.5 bg-white pl-2.5 rounded-[8px] overflow-hidden">
         <Image
           alt="Search icon"
@@ -37,8 +46,9 @@ const SearchForm: FC<SearchFormProps> = () => {
         />
         <input
           type="text"
+          name="searchTerm"
           placeholder="Search..."
-          className="self-stretch h-16 min-w-80 "
+          className="h-16 min-w-24 md:min-w-60 "
         />
         <button
           type="submit"

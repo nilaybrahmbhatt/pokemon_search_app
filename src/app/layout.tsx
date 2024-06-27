@@ -20,7 +20,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={inter.className}>
-        <div className="bg-neutral-50 shadow-[rgba(0,0,0,0.07)_0px_0px_12px] flex justify-center items-center px-5 py-6 text-lg ">
+        <div className="bg-[#004368] shadow-[rgba(0,0,0,0.07)_0px_0px_12px] px-5 py-6 text-lg text-white ">
           Pokemon search App
         </div>
         <div className="container m-auto p-5" >
