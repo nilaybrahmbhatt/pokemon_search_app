@@ -1,11 +1,10 @@
 import { BASE_URL } from "@/services/config";
-import { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import React from "react";
 
 // Define an async function to fetch Pokémon data based on the query parameter
-export const searchPokemon = async (query: string) => {
+const searchPokemon = async (query: string) => {
   try {
     const response = await fetch(BASE_URL + `/pokemon/${query}/`, {
       cache: "force-cache",
