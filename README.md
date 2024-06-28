@@ -23,11 +23,11 @@ To install and run the application locally, follow these steps:
 
 1. Clone the repository:
     ```sh
-    git clone https://github.com/your-repo/pokemon-search-api.git
+    git clone https://github.com/nilaybrahmbhatt/pokemon_search_app.git
     ```
 2. Navigate to the project directory:
     ```sh
-    cd pokemon-search-api
+    cd pokemon_search_app
     ```
 3. Install the dependencies:
     ```sh
@@ -41,14 +41,6 @@ To install and run the application locally, follow these steps:
 ## Usage
 
 Once the development server is running, open your browser and navigate to `http://localhost:3000`. You can use the search functionality to look up various Pokemon and view detailed information.
-
-## Contribution
-
-Contributions are welcome! If you have any suggestions or improvements, please feel free to open an issue or submit a pull request.
-
-## License
-
-This project is licensed under the MIT License. See the LICENSE file for more details.
 
 ---
 
