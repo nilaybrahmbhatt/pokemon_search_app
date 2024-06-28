@@ -4,6 +4,7 @@ import Image from "next/image";
 import Link from "next/link";
 import React from "react";
 
+// Define an async function to fetch Pokémon data based on the query parameter
 export const searchPokemon = async (query: string) => {
   try {
     const response = await fetch(BASE_URL + `/pokemon/${query}/`, {
@@ -15,14 +16,14 @@ export const searchPokemon = async (query: string) => {
     return error as Error;
   }
 };
-
+// Define an async function to generate metadata for the page
 export async function generateMetadata({ params }: { params: any }) {
   const name = params.name;
   return {
     title: name,
   };
 }
-
+// Define the main page component as an async function
 async function Page(props: any) {
   const {
     params: { name },
