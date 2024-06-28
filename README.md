@@ -1,11 +1,11 @@
 
 ---
 
-# Pokemon Search API using API
+# Pokemon Search APP using API
 
 ## Overview
 
-This application, "Pokemon Search API using API," is designed to provide a seamless and efficient experience for searching and retrieving information about Pokemon. Leveraging the latest technologies, the application ensures high performance, scalability, and excellent SEO.
+This application, "Pokemon Search APP using API," is designed to provide a seamless and efficient experience for searching and retrieving information about Pokemon. Leveraging the latest technologies, the application ensures high performance, scalability, and excellent SEO.
 
 ## Features
 
