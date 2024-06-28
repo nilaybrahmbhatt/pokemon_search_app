@@ -1,4 +1,3 @@
-Sure, here is a professional version suitable for a README file:
 
 ---
 
